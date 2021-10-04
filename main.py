@@ -75,35 +75,35 @@ def test_get_n_choose():
 test_get_n_choose()
 def main():
     print("Realizarea meniului pentu utilizator")
-sholdRun=True
-while sholdRun:
-    print("MENIU")
-    print("1,Determinati daca un nr este palindrom ")
-    print("2,Determinati daca un nr este superprim ")
-    print("3,Calculează combinări de n luate câte k ")
-    print("x.IESIRE")
-    print("ALEGE O OPTIUNE! ")
-    optiune=input()
-    if optiune=="1":
-        a=int (input("Dati nr pe care doriti sa verificati ca este palindrom "))
-        if is_palindrom(a)==True:
-            print("Da este palindrom ")
+    sholdRun=True
+    while sholdRun:
+        print("MENIU")
+        print("1,Determinati daca un nr este palindrom ")
+        print("2,Determinati daca un nr este superprim ")
+        print("3,Calculează combinări de n luate câte k ")
+        print("x.IESIRE")
+        print("ALEGE O OPTIUNE! ")
+        optiune=input()
+        if optiune=="1":
+            a=int (input("Dati nr pe care doriti sa verificati ca este palindrom "))
+            if is_palindrom(a)==True:
+                print("Da este palindrom ")
+            else:
+               print("Nu este palindrom ")
+        elif optiune=="2":
+            b=int (input("Dati nr pe care doriti sa verificati ca este superprim "))
+            if is_superprime(b) == True:
+                print("Da este numar superprim ")
+            else:
+               print("Nu este numar superprim ")
+        elif optiune == "3":
+            c = int(input("Dati nr n "))
+            v= int(input("Dati nr k "))
+            print("Combinări de n luate câte k este ")
+            print(int (get_n_choose(c,v)))
+        elif optiune == "x":
+            sholdRun=False
         else:
-           print("Nu este palindrom ")
-    elif optiune=="2":
-        b=int (input("Dati nr pe care doriti sa verificati ca este superprim "))
-        if is_superprime(b) == True:
-            print("Da este numar superprim ")
-        else:
-           print("Nu este numar superprim ")
-    elif optiune == "3":
-        c = int(input("Dati nr n "))
-        v= int(input("Dati nr k "))
-        print("Combinări de n luate câte k este ")
-        print(int (get_n_choose(c,v)))
-    elif optiune == "x":
-        sholdRun=False
-    else:
-        print("Optiune Gresita! Reincercati ")
-if _name_=="_main_":
+            print("Optiune Gresita! Reincercati ")
+if __name__=="__main__":
     main()
