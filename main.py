@@ -53,12 +53,34 @@ def test_is_superprime():
    assert is_superprime(233) is True
    assert is_superprime(8) is False
 test_is_superprime()
-"Realizarea meniului pentu utilizator"
+def get_n_choose(n,k):
+    '''
+    Calculează combinări de n luate câte k
+    :param n:
+    :param k:
+    :return: Se returneaza calculul combinarilor n luate cate k
+    '''
+    x=1
+    for i in range(n-k+1,n+1):
+        x=x*i
+    y=1
+    for i in range(2,k+1):
+        y*=i
+    return x/y
+def test_get_n_choose():
+    assert get_n_choose(4,1)==4
+    assert get_n_choose(4,4)==1
+    assert get_n_choose(5,0)==1
+    assert get_n_choose(4,3)==4
+test_get_n_choose()
+def main():
+    print("Realizarea meniului pentu utilizator")
 sholdRun=True
 while sholdRun:
     print("MENIU")
     print("1,Determinati daca un nr este palindrom ")
     print("2,Determinati daca un nr este superprim ")
+    print("3,Calculează combinări de n luate câte k ")
     print("x.IESIRE")
     print("ALEGE O OPTIUNE! ")
     optiune=input()
@@ -74,7 +96,14 @@ while sholdRun:
             print("Da este numar superprim ")
         else:
            print("Nu este numar superprim ")
+    elif optiune == "3":
+        c = int(input("Dati nr n "))
+        v= int(input("Dati nr k "))
+        print("Combinări de n luate câte k este ")
+        print(int (get_n_choose(c,v)))
     elif optiune == "x":
         sholdRun=False
     else:
         print("Optiune Gresita! Reincercati ")
+if _name_=="_main_":
+    main()
